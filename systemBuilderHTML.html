@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>System Builder V 0.0.1</title>
+
+	<link rel="stylesheet" type="text/css" href="systemBuilder.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+</head>
+
+
+<body class="noisy">
+<div class="piece output">
+<div class="centeredElement">	
+<pre class="ASCII">
+---------------------------------------------------------------------------------------------------------
+
+  ###### ###  ##  ###### ######## ######  ###  ##  #######  ###  ## #### ####    ######   ###### ####### 
+ ###  ## ###  ## ###  ## #  ###   ###  ## ### ###   ###  ## ###  ##  ###  ###     ### ##  ###  ## ###  ##
+ ####    ###  ## ####       ###   ###     #######   ######  ###  ##  ###  ###     ###  ## ###     ###  ##
+  #####   #####   #####     ###   #####   ## # ##   ###  ## ###  ##  ###  ###     ###  ## #####   ###### 
+    ####   ###      ####    ###   ###     ## # ##   ###  ## ###  ##  ###  ###     ###  ## ###     ### ## 
+ ##  ###   ###   ##  ###    ###   ###  ## ##   ##   ###  ## ###  ##  ###  ###   # ### ##  ###  ## ###  ##
+  #####    ###    #####     ###   ######  ##   ##   ######   #####   ###  ####### #####   ######  ###  ##
+                                           ##                                                          ##
+---------------------------------------------------------------------------------------------------------
+</pre> 
+</div>                                                                                                 
+ 
+<h1>System Builder V 0.0.1</h1>
+<p> A work in progress procedural star system generator. Hit the 'Generate' button below to create your system. Currently the generator will create G-type main-sequence stars, and a planetary system of between 1 and 10 planets.</p>
+
+<p>Coming next: Procedural star names and correct planet names, better planet distribution, more stellar and planetary characteristics, refinement to generate the system and planets from a single pre-stellar cloud, moons, other star types, comets and asteroids, binaries and multiple star systems, exotic stars.</p>
+
+<div>	
+	<div class="centeredElement">
+ 		<button type="button" id="generate" class="button">Generate!</button>
+	</div>
+</div>
+	
+
+<h3>Your System</h3>
+
+<div>
+	<h4>Star</h4>
+	<table id="mainTable">
+		<tr>
+			<th>Star Name</th>
+			<th>Mass (M⊕)</th>
+			<th>Age (bya)</th>
+			<th>Size (R⊕)</th>
+			<th>Type (Stellar Class)</th>
+		</tr>
+		<tr id="starDetails"></tr>
+	</table>
+</div>
+
+
+<div>
+	<h4>Planets</h4>
+	<table id="planetDetails">
+		<tr>
+			<th>Name</th>
+			<th>Orbital Distance (AU)</th>
+			<th>Year Length (Earth Days)</th>
+		</tr>
+	</table>
+</div>
+</div>	
+
+<div class="piece scanlines noclick"></div>
+<div class="piece glow noclick"></div>
+
+<script type="text/javascript" src="systemBuilderScript.js"></script>
+
+</body>
+</html>
