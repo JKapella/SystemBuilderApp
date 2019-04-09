@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
-.ascii-title {
+body {
+    margin: 0;
     text-align: center;
 }
+

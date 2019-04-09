@@ -14,7 +14,7 @@
 
 <body>
 
-	<pre class="ascii-title">
+	<pre>
 ---------------------------------------------------------------------------------------------------------
 
   ###### ###  ##  ###### ######## ######  ###  ##  #######  ###  ## #### ####    ######   ###### ####### 
@@ -28,25 +28,23 @@
 ---------------------------------------------------------------------------------------------------------
 	</pre>
 	<div>
-		<h3>Your System</h3>
 		<div>
-			<h4>Star</h4>
-			<table id="mainTable">
-				<tr>
-					<th>Star Name</th>
-					<th>Mass (M⊕)</th>
-					<th>Age (bya)</th>
-					<th>Size (R⊕)</th>
-					<th>Type (Stellar Class)</th>
-				</tr>
-				<tr id="starDetails"></tr>
-			</table>
-		</div>
-		<div class="centeredElement">
+			<h3>Generation Control</h3>
+			<label for='systemNameInput'></label>
+			<input type='text' id='systemNameInput' name='systemNameEntry'>
 			<button type="button" id="generate" class="button">Generate!</button>
 		</div>
-	</div>
-	<div>
+		<h4>Star</h4>
+		<table id="mainTable">
+			<tr>
+				<th>Star Name</th>
+				<th>Mass (M⊕)</th>
+				<th>Age (bya)</th>
+				<th>Size (R⊕)</th>
+				<th>Type (Stellar Class)</th>
+			</tr>
+			<tr id="starDetails"></tr>
+		</table>
 		<h4>Planets</h4>
 		<table id="planetDetails">
 			<tr>
@@ -55,6 +53,9 @@
 				<th>Year Length (Earth Days)</th>
 			</tr>
 		</table>
+	</div>
+	<div>
+
 	</div>
 	<div>
 		<h1>System Builder V 0.0.1</h1>

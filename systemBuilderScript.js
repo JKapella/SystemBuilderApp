@@ -62,7 +62,7 @@ function calculateStarType() {
 	return "G2V";
 }
 
-//Stellar body funtions - currently limited to planets, but asteroids and comets should go here too ----------------------
+//Stellar body fucntions - currently limited to planets, but asteroids and comets should go here too ----------------------
 
 function calculateNoOfPlanets() {
 	//Disappointingly, there is currently no consensus over what factors (beyond makup of the original cloud the system formed from)
