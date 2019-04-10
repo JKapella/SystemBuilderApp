@@ -12,8 +12,7 @@ var noOfPlanetsMax = 10;
 var solOrbitalRange = 60;
 
 
-
-function createStarName() {
+function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
 	var name = "My Star"
 	if (nameInputFieldContent !== '') {
@@ -177,7 +176,7 @@ var createdSystem = {createdStar: {}, planets: []};
 
 //create the star
 
-createdSystem.createdStar.name = createStarName(); //string for star name
+createdSystem.createdStar.name = createSystemName(); //string for the name of the system
 createdSystem.createdStar.mass = calculateStarMass(); //In solar masses
 createdSystem.createdStar.age = calculateStarAge(); //In Billions of Years
 createdSystem.createdStar.size = calculateStarSize(); //In solar Radius
