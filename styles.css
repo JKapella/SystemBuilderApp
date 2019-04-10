@@ -11,11 +11,15 @@ body {
     width: 500px;
 }
 
-.textContainer {
+.container {
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
     margin: 5px;
+}
+
+.textContainer {
+
+    padding: 10px;
 }
 
 .floatContainer {

@@ -29,14 +29,14 @@
 	</pre>
 	<div class='floatContainer'>
 		<div class='sideBar float'>
-			<div class='textContainer'>
+			<div class='container textContainer'>
 				<h3>Generation Control</h3>
 				<p>Name your star below and hit 'generate':</p>
 				<label for='systemNameInput'></label>
 				<input type='text' id='systemNameInput' name='systemNameEntry'>
 				<button type="button" id="generate" class="button">Generate!</button>
 			</div>
-			<div class='textContainer'>
+			<div class='container textContainer'>
 				<h4>Star</h4>
 				<table id="mainTable">
 					<tr>
@@ -58,12 +58,12 @@
 				</table>
 			</div>
 		</div>
-		<div class='float'>
+		<div id='systemViewer' class='float container'>
 
 		</div>
 	</div>
 
-	<div class='textContainer'>
+	<div class='container textContainer'>
 		<h1>System Builder V 0.0.1</h1>
 		<p> A work in progress procedural star system generator. Hit the 'Generate' button below to create your system. Currently the generator will create G-type main-sequence stars, and a planetary system of between 1 and 10 planets.</p>
 		<p>Coming next: Procedural star names and correct planet names, better planet distribution, more stellar and planetary characteristics, refinement to generate the system and planets from a single pre-stellar cloud, moons, other star types, comets and asteroids, binaries and multiple star systems, exotic stars.</p>
