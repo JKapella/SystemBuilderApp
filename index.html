@@ -27,38 +27,42 @@
                                            ##                                                          ##
 ---------------------------------------------------------------------------------------------------------
 	</pre>
-	<div class='sideBar'>
-		<div class='textContainer'>
-			<h3>Generation Control</h3>
-			<label for='systemNameInput'></label>
-			<input type='text' id='systemNameInput' name='systemNameEntry'>
-			<button type="button" id="generate" class="button">Generate!</button>
+	<div class='floatContainer'>
+		<div class='sideBar float'>
+			<div class='textContainer'>
+				<h3>Generation Control</h3>
+				<p>Name your star below and hit 'generate':</p>
+				<label for='systemNameInput'></label>
+				<input type='text' id='systemNameInput' name='systemNameEntry'>
+				<button type="button" id="generate" class="button">Generate!</button>
+			</div>
+			<div class='textContainer'>
+				<h4>Star</h4>
+				<table id="mainTable">
+					<tr>
+						<th>Star Name</th>
+						<th>Mass (M⊕)</th>
+						<th>Age (bya)</th>
+						<th>Size (R⊕)</th>
+						<th>Type (Stellar Class)</th>
+					</tr>
+					<tr id="starDetails"></tr>
+				</table>
+				<h4>Planets</h4>
+				<table id="planetDetails">
+					<tr>
+						<th>Name</th>
+						<th>Orbital Distance (AU)</th>
+						<th>Year Length (Earth Days)</th>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<div class='textContainer'>
-			<h4>Star</h4>
-			<table id="mainTable">
-				<tr>
-					<th>Star Name</th>
-					<th>Mass (M⊕)</th>
-					<th>Age (bya)</th>
-					<th>Size (R⊕)</th>
-					<th>Type (Stellar Class)</th>
-				</tr>
-				<tr id="starDetails"></tr>
-			</table>
-			<h4>Planets</h4>
-			<table id="planetDetails">
-				<tr>
-					<th>Name</th>
-					<th>Orbital Distance (AU)</th>
-					<th>Year Length (Earth Days)</th>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div>
+		<div class='float'>
 
+		</div>
 	</div>
+
 	<div class='textContainer'>
 		<h1>System Builder V 0.0.1</h1>
 		<p> A work in progress procedural star system generator. Hit the 'Generate' button below to create your system. Currently the generator will create G-type main-sequence stars, and a planetary system of between 1 and 10 planets.</p>
