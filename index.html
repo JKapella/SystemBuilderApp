@@ -31,13 +31,13 @@
 		<div class='sideBar float'>
 			<div class='container textContainer'>
 				<h3>Generation Control</h3>
-				<p>Name your star below and hit 'generate':</p>
+				<p>Name your system below (or leave blank for a procedurally generated one) and hit 'generate':</p>
 				<label for='systemNameInput'></label>
 				<input type='text' id='systemNameInput' name='systemNameEntry'>
 				<button type="button" id="generate" class="button">Generate!</button>
 			</div>
 			<div class='container textContainer'>
-				<h4>Star</h4>
+				<h4 id='starName'>Star</h4>
 				<table id="mainTable">
 					<tr>
 						<th>Star Name</th>

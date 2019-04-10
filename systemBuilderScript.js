@@ -11,6 +11,22 @@ var noOfPlanetsMax = 10;
 
 var solOrbitalRange = 60;
 
+
+
+function createStarName() {
+	var nameInputFieldContent = document.querySelector('input').value
+	var name = "My Star"
+	if (nameInputFieldContent !== '') {
+		name = nameInputFieldContent
+	}
+	//TODO add function for proc-gen a star name - using proper stellar classification
+	return name;
+}
+
+
+
+
+
 // Execute the whole thing on click!
 
 document.getElementById("generate").onclick = function generateSystem() {
@@ -24,10 +40,7 @@ while(elements.length > 0){
 
 //Star creation functions (g-type stars only currently) -------------------
 
-function createStarName() {
-	//TODO add function for proc-gen a star name - using proper stellar classification
-	return "My Star";
-}
+
 
 function calculateStarMass () {
 	//This is currently random - but within limits for a g-type main sequence star
