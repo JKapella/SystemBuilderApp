@@ -1,15 +1,9 @@
 //Hard coded variables for changing
 
-
-
-var starAgeMin = 3;
-var starAgeMax = 10;
-
 var noOfPlanetsMin = 1; 
 var noOfPlanetsMax = 10;
 
 var solOrbitalRange = 60;
-
 
 function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
@@ -18,7 +12,7 @@ function createSystemName() {
 		name = nameInputFieldContent
 	}
 	//TODO add function for proc-gen a star name - using proper stellar classification
-	return name;
+	return name
 }
 
 function calculateStarMass () {
@@ -29,8 +23,29 @@ function calculateStarMass () {
 }
 
 function calculateStarAge() {
+	var starAgeMin = 3
+	var starAgeMax = 10
 	//Currently random, restricted to stellar 'middle age' when planets have formed, but star hasn't yet expanded
 	return +(Math.random() * (starAgeMax - starAgeMin) + starAgeMin).toFixed(2)
+}
+
+function calculateStarSize(starAge, starMass) {
+	//Currently calculates based on relative age and mass to our sun - based on the below table
+	//        Age   Radius
+	// ZAMS       0.00   0.89
+	// present    4.58   1.00
+	// MS:ﬁnal   10.00   1.37
+	// RGB:tip   12.17   256.
+	// ZA-He     12.17   11.2
+	// AGB:tip   12.30   149.
+	//TODO, create a single scale to set this based on star mass and age from start to end of star life
+	var ageAdjustment
+	if (starAge < 4.58) { //if star is younger than the sun
+		ageAdjustment = -((starAge.age/4.58) * 0.11) //0.11 is the change in size for sun in first 5bya of life
+	} else { //it's older than the sun
+		ageAdjustment = (((starAge.age - 4.58)/5.42) * 0.37) //0.37 is the change in size for sun in second 5bya of life
+	}
+	return starMass + ageAdjustment
 }
 
 
@@ -46,31 +61,9 @@ while(elements.length > 0){
 	elements[0].parentNode.removeChild(elements[0]);
 }
 
-//Star creation functions (g-type stars only currently) -------------------
 
 
 
-
-
-
-
-function calculateStarSize() {
-	//Currently calculates based on relative age and mass to our sun - based on the below table
-	//        Age   Radius
-	// ZAMS       0.00   0.89
-	// present    4.58   1.00
-	// MS:ﬁnal   10.00   1.37 
-	// RGB:tip   12.17   256.
-	// ZA-He     12.17   11.2
-	// AGB:tip   12.30   149.
-	//TODO, create a single scale to set this based on star mass and age from start to end of star life	
-	if (createdSystem.createdStar.age < 4.58) { //if star is younger than the sun
-		var ageAdjustment = -((createdSystem.createdStar.age/4.58) * 0.11); //0.11 is the change in size for sun in first 5bya of life
-	} else { //it's older than the sun
-		var ageAdjustment = (((createdSystem.createdStar.age - 4.58)/5.42) * 0.37); //0.37 is the change in size for sun in second 5bya of life
-	}	
-	return (createdSystem.createdStar.mass + ageAdjustment);
-}
 
 function calculateStarType() {
 	//TODO, make this dynamic as I introduce other star types
@@ -182,7 +175,7 @@ var createdSystem = {createdStar: {}, planets: []};
 createdSystem.createdStar.name = createSystemName(); //string for the name of the system
 createdSystem.createdStar.mass = calculateStarMass(); //In solar masses
 createdSystem.createdStar.age = calculateStarAge(); //In Billions of Years
-createdSystem.createdStar.size = calculateStarSize(); //In solar Radius
+createdSystem.createdStar.size = calculateStarSize(createdSystem.createdStar.age, createdSystem.createdStar.mass); //In solar Radius
 createdSystem.createdStar.type = calculateStarType(); //only G-type main sequence stars for now...
 
 //how many planets in the system?
