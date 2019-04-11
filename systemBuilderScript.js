@@ -1,7 +1,6 @@
 //Hard coded variables for changing
 
-var starMassMin = 0.8;
-var starMassMax = 1.04;
+
 
 var starAgeMin = 3;
 var starAgeMax = 10;
@@ -14,7 +13,7 @@ var solOrbitalRange = 60;
 
 function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
-	var name = "My Star"
+	var name = 'My Star'
 	if (nameInputFieldContent !== '') {
 		name = nameInputFieldContent
 	}
@@ -22,7 +21,17 @@ function createSystemName() {
 	return name;
 }
 
+function calculateStarMass () {
+	var starMassMin = 0.8
+	var starMassMax = 1.04
+	//This is currently random - but within limits for a g-type main sequence star
+	return +(Math.random() * (starMassMax - starMassMin) + starMassMin).toFixed(2)
+}
 
+function calculateStarAge() {
+	//Currently random, restricted to stellar 'middle age' when planets have formed, but star hasn't yet expanded
+	return +(Math.random() * (starAgeMax - starAgeMin) + starAgeMin).toFixed(2)
+}
 
 
 
@@ -41,15 +50,9 @@ while(elements.length > 0){
 
 
 
-function calculateStarMass () {
-	//This is currently random - but within limits for a g-type main sequence star
-	return Math.random() * (starMassMax - starMassMin) + starMassMin; //TODO should this result be rounded?
-}
 
-function calculateStarAge() {
-	//Currently random, restricted to stellar 'middle age' when planets have formed, but star hasn't yet expanded
-  	return Math.random() * (starAgeMax - starAgeMin) + starAgeMin; //TODO should this result be rounded?
-}
+
+
 
 function calculateStarSize() {
 	//Currently calculates based on relative age and mass to our sun - based on the below table
