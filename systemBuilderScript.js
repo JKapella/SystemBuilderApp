@@ -7,39 +7,27 @@ var solOrbitalRange = 60;
 
 function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
-	var name = 'My Star'
+	var name = 'Star'
 	if (nameInputFieldContent !== '') {
 		name = nameInputFieldContent
 	}
-	//TODO add function for proc-gen a star name - using proper stellar classification
 	return name
 }
 
 function calculateStarMass () {
 	var starMassMin = 0.8
 	var starMassMax = 1.04
-	//This is currently random - but within limits for a g-type main sequence star
 	return +(Math.random() * (starMassMax - starMassMin) + starMassMin).toFixed(2)
 }
 
 function calculateStarAge() {
 	var starAgeMin = 3
 	var starAgeMax = 10
-	//Currently random, restricted to stellar 'middle age' when planets have formed, but star hasn't yet expanded
 	return +(Math.random() * (starAgeMax - starAgeMin) + starAgeMin).toFixed(2)
 }
 
 function calculateStarSize(starAge, starMass) {
-	//Currently calculates based on relative age and mass to our sun - based on the below table
-	//        Age   Radius
-	// ZAMS       0.00   0.89
-	// present    4.58   1.00
-	// MS:ﬁnal   10.00   1.37
-	// RGB:tip   12.17   256.
-	// ZA-He     12.17   11.2
-	// AGB:tip   12.30   149.
-	//TODO, in general sort this function out, I don't think it's very good or clear at the moment
-	//create a single scale to set this based on star mass and age from start to end of star life
+	//TODO, in general sort this function out, not good or clear
 	var ageAdjustment
 	if (starAge < 4.58) { //if star is younger than the sun
 		ageAdjustment = -((starAge.age/4.58) * 0.11) //0.11 is the change in size for sun in first 5bya of life
@@ -50,8 +38,15 @@ function calculateStarSize(starAge, starMass) {
 }
 
 function calculateStarType() {
-	//TODO, make this dynamic as I introduce other star types
 	return 'G2V'
+}
+
+function calculateNoOfPlanets() {
+	//Disappointingly, there is currently no consensus over what factors (beyond makup of the original cloud the system formed from)
+	//define the number of planets - so it's going to have to be a random number for now
+	//for now this can be between 1 and 10, because none is boring, and 10 is the limit of what we know of so far...
+	//TODO - make this related to original size of pre-stellar gas cloud?
+	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
 }
 
 // Execute the whole thing on click!
@@ -63,17 +58,6 @@ document.getElementById("generate").onclick = function generateSystem() {
 var elements = document.getElementsByClassName("generatedTable");
 while(elements.length > 0){
 	elements[0].parentNode.removeChild(elements[0]);
-}
-
-
-//Stellar body fucntions - currently limited to planets, but asteroids and comets should go here too ----------------------
-
-function calculateNoOfPlanets() {
-	//Disappointingly, there is currently no consensus over what factors (beyond makup of the original cloud the system formed from)
-	//define the number of planets - so it's going to have to be a random number for now
-	//for now this can be between 1 and 10, because none is boring, and 10 is the limit of what we know of so far...
-	//TODO - make this related to original size of pre-stellar gas cloud?
-    return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin;
 }
 
 //Planet creation functions --------------------------------------------------------------------------------------------------
