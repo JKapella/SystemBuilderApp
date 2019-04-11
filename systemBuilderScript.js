@@ -38,7 +38,8 @@ function calculateStarSize(starAge, starMass) {
 	// RGB:tip   12.17   256.
 	// ZA-He     12.17   11.2
 	// AGB:tip   12.30   149.
-	//TODO, create a single scale to set this based on star mass and age from start to end of star life
+	//TODO, in general sort this function out, I don't think it's very good or clear at the moment
+	//create a single scale to set this based on star mass and age from start to end of star life
 	var ageAdjustment
 	if (starAge < 4.58) { //if star is younger than the sun
 		ageAdjustment = -((starAge.age/4.58) * 0.11) //0.11 is the change in size for sun in first 5bya of life
@@ -48,7 +49,10 @@ function calculateStarSize(starAge, starMass) {
 	return starMass + ageAdjustment
 }
 
-
+function calculateStarType() {
+	//TODO, make this dynamic as I introduce other star types
+	return 'G2V'
+}
 
 // Execute the whole thing on click!
 
@@ -61,14 +65,6 @@ while(elements.length > 0){
 	elements[0].parentNode.removeChild(elements[0]);
 }
 
-
-
-
-
-function calculateStarType() {
-	//TODO, make this dynamic as I introduce other star types
-	return "G2V";
-}
 
 //Stellar body fucntions - currently limited to planets, but asteroids and comets should go here too ----------------------
 
