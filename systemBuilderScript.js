@@ -1,10 +1,3 @@
-//Hard coded variables for changing
-
-var noOfPlanetsMin = 1; 
-var noOfPlanetsMax = 10;
-
-var solOrbitalRange = 60;
-
 function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
 	var name = 'Star'
@@ -42,7 +35,23 @@ function calculateStarType() {
 }
 
 function calculateNoOfPlanets() {
+	var noOfPlanetsMin = 1;
+	var noOfPlanetsMax = 10;
 	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
+}
+
+function calculateOrbitalDistance(planetNumber) {
+	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
+	var solOrbitalRange = 60;
+	var potentialOrbitalRange = solOrbitalRange * createdSystem.createdStar.mass;
+	var randomNumber = Math.random();
+	var orbitalRangeMin
+	if (planetNumber > 0) {
+		orbitalRangeMin = createdSystem.planets[planetNumber - 1].orbitalDistance;
+	} else {
+		orbitalRangeMin = 0.2;
+	}
+	return (randomNumber * randomNumber) * (potentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin;
 }
 
 // Execute the whole thing on click!
@@ -58,23 +67,6 @@ while(elements.length > 0){
 
 //Planet creation functions --------------------------------------------------------------------------------------------------
 
-function calculateOrbitalDistance(planetNumber) {
-	//take the mass of the star and calculate the maximum orbital distance
-	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
-	
-	//adjust the orbital range based on the mass of the parent star
-	var potentialOrbitalRange = solOrbitalRange * createdSystem.createdStar.mass;
-	
-	//take the number of planets and distribute them throughout the potential 'orbital space'
-	var randomNumber = Math.random();
-	
-	if (planetNumber > 0) {
-		var orbitalRangeMin = createdSystem.planets[planetNumber - 1].orbitalDistance;
-	} else {
-		var orbitalRangeMin = 0.2;
-	}
-	return (randomNumber * randomNumber) * (potentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin;	
-}
 
 function calculateYearLength(planetNumber) {
 	//using a simplified version of Keplers First Law! - apparently only works for the sun
