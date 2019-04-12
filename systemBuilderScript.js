@@ -42,10 +42,6 @@ function calculateStarType() {
 }
 
 function calculateNoOfPlanets() {
-	//Disappointingly, there is currently no consensus over what factors (beyond makup of the original cloud the system formed from)
-	//define the number of planets - so it's going to have to be a random number for now
-	//for now this can be between 1 and 10, because none is boring, and 10 is the limit of what we know of so far...
-	//TODO - make this related to original size of pre-stellar gas cloud?
 	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
 }
 
