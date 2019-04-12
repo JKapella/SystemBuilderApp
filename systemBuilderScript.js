@@ -167,13 +167,3 @@ addPlanetDetailstoHTMLTable(createdSystem.noOfPlanets);
 
 
 };
-
-//NOTES ON STUFF
-
-//https://en.wikipedia.org/wiki/Stellar_classification
-
-//https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
-
-//EXOPLANET ARCHIVE - As cool as it sounds... https://exoplanetarchive.ipac.caltech.edu/
-
-///good links to papers on planetary disribtion in this article https://en.wikipedia.org/wiki/Planetary_system

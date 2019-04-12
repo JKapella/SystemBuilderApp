@@ -29,3 +29,10 @@ AGB:tip | 12.30 | 149.
 * Add function for proc-gen a star name - using proper stellar classification
 * Make Calculate Star Type - dynamic as I introduce other star types
 * Make Calculate Number Of Planets related to original size of pre-stellar gas cloud
+
+##Notes
+
+https://en.wikipedia.org/wiki/Stellar_classification
+https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
+EXOPLANET ARCHIVE - As cool as it sounds... https://exoplanetarchive.ipac.caltech.edu/
+Good links to papers on planetary distribtion in this article https://en.wikipedia.org/wiki/Planetary_system
