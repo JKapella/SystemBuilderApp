@@ -35,32 +35,35 @@ function calculateStarType() {
 }
 
 function calculateNoOfPlanets() {
-	var noOfPlanetsMin = 1;
-	var noOfPlanetsMax = 10;
-	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
+	var noOfPlanetsMin = 1
+	var noOfPlanetsMax = 11
+	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin)) + noOfPlanetsMin
 }
 
 function createPlanets(system) {
 	for (var currentPlanet = 0; currentPlanet < system.noOfPlanets; currentPlanet++) {
 		system.planets.push({})
 		system.planets[currentPlanet].name = 'Planet: ' + (currentPlanet + 1)
-		system.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, system.createdStar.mass, system.planets)
+		system.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, system.createdStar.mass, system.planets, system.noOfPlanets)
 		system.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet, system.planets)
 	}
 }
 
-function calculateOrbitalDistance(planetNumber, starMass, planets) {
+function calculateOrbitalDistance(planetNumber, starMass, planets, numberOfPlanets) {
 	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
-	var solOrbitalRange = 60;
-	var potentialOrbitalRange = solOrbitalRange * starMass;
-	var randomNumber = Math.random();
+	var solOrbitalRange = 60
+	var maxPotentialOrbitalRange = solOrbitalRange * starMass
+
 	var orbitalRangeMin
 	if (planetNumber > 0) {
-		orbitalRangeMin = planets[planetNumber - 1].orbitalDistance;
+		orbitalRangeMin = (planets[planetNumber - 1].orbitalDistance) + 1
 	} else {
-		orbitalRangeMin = 0.2;
+		orbitalRangeMin = 0.2
 	}
-	return (randomNumber * randomNumber) * (potentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin;
+	var planetsRemainingToPlace = numberOfPlanets - planetNumber
+	var planetPotentialOrbitalRange = (maxPotentialOrbitalRange - orbitalRangeMin) / planetsRemainingToPlace
+	var randomNumber = Math.random()
+	return randomNumber * (planetPotentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin
 }
 
 function calculateYearLength(planetNumber, planets) {
