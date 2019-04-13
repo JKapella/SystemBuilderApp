@@ -54,17 +54,17 @@ function calculateOrbitalDistance(planetNumber, starMass, planets, numberOfPlane
 	var maxPotentialOrbitalRange = solOrbitalRange * starMass
 	var orbitalRangeMin
 	if (planetNumber > 0) {
-		orbitalRangeMin = (planets[planetNumber - 1].orbitalDistance) + 0.5
+		orbitalRangeMin = parseFloat(planets[planetNumber - 1].orbitalDistance) + 0.5
 	} else {
 		orbitalRangeMin = 0.2
 	}
 	var planetsRemainingToPlace = numberOfPlanets - planetNumber
 	var planetPotentialOrbitalRange = (maxPotentialOrbitalRange - orbitalRangeMin) / planetsRemainingToPlace
 	var randomNumber = Math.random()
-	return (randomNumber * planetPotentialOrbitalRange) + orbitalRangeMin
+	return (parseFloat((randomNumber * planetPotentialOrbitalRange) + orbitalRangeMin)).toFixed(2)
 }
 
 function calculateYearLength(planetNumber, planets) {
 	var yearLength = Math.sqrt(Math.pow(planets[planetNumber].orbitalDistance ,3))
-	return yearLength * 365
+	return (parseFloat(yearLength * 365)).toFixed(2)
 }
