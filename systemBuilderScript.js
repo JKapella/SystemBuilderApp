@@ -43,7 +43,7 @@ function calculateNoOfPlanets() {
 function createPlanets(system) {
 	for (var currentPlanet = 0; currentPlanet < system.noOfPlanets; currentPlanet++) {
 		system.planets.push({})
-		system.planets[currentPlanet].name = 'Planet: ' + (currentPlanet + 1)
+		system.planets[currentPlanet].name = system.name + (currentPlanet + 1)
 		system.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, system.createdStar.mass, system.planets, system.noOfPlanets)
 		system.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet, system.planets)
 	}

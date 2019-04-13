@@ -99,7 +99,7 @@
     font-size: 10em;
 }
 #mercury {
-    font-size: 2.5em;
+    font-size: 1em;
 }
 
 #venus {
@@ -108,7 +108,7 @@
 
 
 #mercury > .pos > .planet {
-    font-size: 0.4em;
+    font-size: 1em;
 }
 
 #venus > .pos > .planet {
