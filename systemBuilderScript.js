@@ -40,6 +40,15 @@ function calculateNoOfPlanets() {
 	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
 }
 
+function createPlanets(system) {
+	for (var currentPlanet = 0; currentPlanet < system.noOfPlanets; currentPlanet++) {
+		system.planets.push({})
+		system.planets[currentPlanet].name = 'Planet: ' + (currentPlanet + 1)
+		system.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, system.createdStar.mass, system.planets)
+		system.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet, system.planets)
+	}
+}
+
 function calculateOrbitalDistance(planetNumber, starMass, planets) {
 	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
 	var solOrbitalRange = 60;
@@ -53,7 +62,6 @@ function calculateOrbitalDistance(planetNumber, starMass, planets) {
 	}
 	return (randomNumber * randomNumber) * (potentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin;
 }
-
 
 function calculateYearLength(planetNumber, planets) {
 	var yearLength = Math.sqrt(Math.pow(planets[planetNumber].orbitalDistance ,3))
@@ -136,24 +144,13 @@ var createdSystem = {createdStar: {}, planets: []};
 
 //create the star
 
-createdSystem.createdStar.name = createSystemName(); //string for the name of the system
-createdSystem.createdStar.mass = calculateStarMass(); //In solar masses
-createdSystem.createdStar.age = calculateStarAge(); //In Billions of Years
-createdSystem.createdStar.size = calculateStarSize(createdSystem.createdStar.age, createdSystem.createdStar.mass); //In solar Radius
-createdSystem.createdStar.type = calculateStarType(); //only G-type main sequence stars for now...
-
-//how many planets in the system?
-
-createdSystem.noOfPlanets = calculateNoOfPlanets();
- 
-//create the planets
-
-for (var currentPlanet = 0; currentPlanet < createdSystem.noOfPlanets; currentPlanet++) {
-	createdSystem.planets.push({}); //create empty planet object
-	createdSystem.planets[currentPlanet].name = 'Planet: ' + (currentPlanet + 1); //give it a name
-	createdSystem.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, createdSystem.createdStar.mass, createdSystem.planets); //return in AU
-	createdSystem.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet, createdSystem.planets); //return in earth days
-}
+createdSystem.createdStar.name = createSystemName()
+createdSystem.createdStar.mass = calculateStarMass()
+createdSystem.createdStar.age = calculateStarAge()
+createdSystem.createdStar.size = calculateStarSize(createdSystem.createdStar.age, createdSystem.createdStar.mass)
+createdSystem.createdStar.type = calculateStarType()
+createdSystem.noOfPlanets = calculateNoOfPlanets()
+createPlanets(createdSystem)
 
 //loop through the different bits of info and add to the HTML...
 

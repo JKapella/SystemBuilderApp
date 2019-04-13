@@ -3,6 +3,17 @@ A simple js based app to procedurally generate a star system
 
 ## Notes
 
+###Key of units of measurement
+
+* Created Star Mass - In solar masses
+* Created Star Age - In Billions of Years
+* Created Star Size -In solar Radius
+* Created Star.type - Only G-type main sequence stars for now
+* Planet Orbital Distance - In AU
+* Planet Year Length - In Earth Days
+
+###Details of functions
+
 * **Calculate Star Mass** 
   * This is currently random - but within limits for a g-type main sequence star. Ideally this will take into account some sort of starting condition - e.g. the material available in the cloud of material the star is formed from.
 * **Calculate Star Age**
