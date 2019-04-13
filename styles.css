@@ -5,6 +5,9 @@
 body {
     margin: 0;
     text-align: center;
+    background-color:  #0C1423;
+    color: #257DAC;
+    font-family: monospace;
 }
 
 .sideBar {
@@ -12,14 +15,14 @@ body {
 }
 
 .container {
-    border: 2px solid #000000;
+    border: 2px solid #257DAC;
     border-radius: 10px;
     margin: 5px;
 }
 
 .textContainer {
-
     padding: 10px;
+    font-size: 1rem;
 }
 
 .floatContainer {
@@ -30,3 +33,6 @@ body {
     float: left;
 }
 
+#systemViewer {
+    margin-top: 10px;
+}
