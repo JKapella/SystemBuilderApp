@@ -7,7 +7,9 @@ function displaySystem(system) {
     html += `</div></div>`
     document.getElementById('systemViewer').innerHTML = html
     addStarStyling(system.createdStar.size)
-    setPlanetStyles(system)
+    setOrbitSizes(system)
+    //set the orbit speed, set the planet size, set the planet correct animation speed
+    setOrbitSpeeds(system)
 }
 
 function addPlanetsHTML(system) {
@@ -27,16 +29,25 @@ function addStarStyling(size) {
     document.getElementById('star').style.fontSize = newSize + 'em'
 }
 
-function setPlanetStyles(system) {
+function setOrbitSizes(system) {
     //current min and max for this is 1rem and 7rem - they create the smallest and widest orbits
-    //need to set the orbit size, set the orbit speed, set the planet size, set the planet correct animation speed
-    // system.planets.forEach(function(planet) {
-    //     var targetPlanet
-    // })
-
+    var avaliableOrbitRange = 6
+    var orbitalMarginSize = avaliableOrbitRange / system.noOfPlanets
+    var currentOrbit = 1 + (orbitalMarginSize / 2)
+    system.planets.forEach(function(planet) {
+        var targetPlanetOrbit = document.getElementById(planet.name)
+        targetPlanetOrbit.style.fontSize = currentOrbit + 'em'
+        currentOrbit += orbitalMarginSize
+    })
 }
 
+function setOrbitSpeeds(system) {
+    //start with 2secs as the 'base' speed
+}
 
+// #mercury.orbit, #mercury .pos {
+//     animation-duration: 3s;
+// }
 
 //PERHAPS DO SET SIZES TO START?
 
