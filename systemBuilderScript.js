@@ -50,20 +50,18 @@ function createPlanets(system) {
 }
 
 function calculateOrbitalDistance(planetNumber, starMass, planets, numberOfPlanets) {
-	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
-	var solOrbitalRange = 60
+	var solOrbitalRange = 40
 	var maxPotentialOrbitalRange = solOrbitalRange * starMass
-
 	var orbitalRangeMin
 	if (planetNumber > 0) {
-		orbitalRangeMin = (planets[planetNumber - 1].orbitalDistance) + 1
+		orbitalRangeMin = (planets[planetNumber - 1].orbitalDistance) + 0.5
 	} else {
 		orbitalRangeMin = 0.2
 	}
 	var planetsRemainingToPlace = numberOfPlanets - planetNumber
 	var planetPotentialOrbitalRange = (maxPotentialOrbitalRange - orbitalRangeMin) / planetsRemainingToPlace
 	var randomNumber = Math.random()
-	return randomNumber * (planetPotentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin
+	return (randomNumber * planetPotentialOrbitalRange) + orbitalRangeMin
 }
 
 function calculateYearLength(planetNumber, planets) {
