@@ -3,20 +3,9 @@ function outputHTMLTables(createdSystem) {
     var systemDetailsHTML = ''
     systemDetailsHTML += createSystemNameHTML(createdSystem.name)
     systemDetailsHTML += addStarDetailsHTML(createdSystem.createdStar)
-    // addPlanetDetailsToHTMLTable(createdSystem)
-
+    systemDetailsHTML += addPlanetDetailsHTML(createdSystem)
     document.getElementById('systemDetails').innerHTML = systemDetailsHTML
 }
-
-//
-//     <h4>Planets</h4>
-//     <table id="planetDetails">
-//     <tr>
-//     <th>Name</th>
-//     <th>Orbital Distance (AU)</th>
-// <th>Year Length (Earth Days)</th>
-// </tr>
-// </table>
 
 function createSystemNameHTML(starName) {
     var html = `<h4>The ${starName} system</h4>`
@@ -44,39 +33,32 @@ function addStarDetailsHTML(starInfo) {
     return html
 }
 
-//TODO This function and the star details function can be merged (maybe?)
-function addPlanetDetailsHTML(planetName,PlanetOrbit,PlanetYear) {
-    //create the row
-    var planetInfoRow = document.createElement("tr");
-    planetInfoRow.setAttribute("id", planetName);
-    planetInfoRow.setAttribute("class", "generatedTable");
-    //add the row to the doc
-    document.getElementById("planetDetails").appendChild(planetInfoRow);
-    //add name cell
-    var planetNameCell = document.createElement("td");
-    var planetNameContent = document.createTextNode(planetName);
-    planetNameCell.appendChild(planetNameContent);
-    document.getElementById(planetName).appendChild(planetNameCell);
-    //add orbit cell
-    var planetOrbitCell = document.createElement("td");
-    var planetOrbitContent = document.createTextNode(PlanetOrbit);
-    planetOrbitCell.appendChild(planetOrbitContent);
-    document.getElementById(planetName).appendChild(planetOrbitCell);
-    //add Year Length cell
-    var planetYearCell = document.createElement("td");
-    var planetYearContent = document.createTextNode(PlanetYear);
-    planetYearCell.appendChild(planetYearContent);
-    document.getElementById(planetName).appendChild(planetYearCell);
+function addPlanetDetails(planetName,PlanetOrbit,PlanetYear) {
+    html = `
+    <tr>
+        <td>${planetName}</td>
+        <td>${PlanetOrbit}</td>
+        <td>${PlanetYear}</td>
+    </tr>`
+    return html
 }
 
-
-
-function addPlanetDetailsToHTMLTable(system) {
+function addPlanetDetailsHTML(system) {
+    var html =
+    `<h4>Planets</h4>
+        <table>
+        <tr>
+            <th>Name</th>
+            <th>Orbital Distance (AU)</th>
+            <th>Year Length (Earth Days)</th>
+        </tr>`
     for (var currentPlanet = 0; currentPlanet < system.noOfPlanets; currentPlanet++) {
-        addPlanetDetailsHTML(
+        html += addPlanetDetails(
             system.planets[currentPlanet].name,
             system.planets[currentPlanet].orbitalDistance,
             system.planets[currentPlanet].yearLength
-        );
+        )
     }
+    html += `</table>`
+    return html
 }
