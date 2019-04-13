@@ -1,6 +1,6 @@
 function createSystemName() {
 	var nameInputFieldContent = document.querySelector('input').value
-	var name = 'Star'
+	var name = 'Anonymous'
 	if (nameInputFieldContent !== '') {
 		name = nameInputFieldContent
 	}
