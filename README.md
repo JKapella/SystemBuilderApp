@@ -23,6 +23,9 @@ AGB:tip | 12.30 | 149.
 * **Calculate Number Of Planets**
   * Disappointingly, there seems currently no consensus over what factors (beyond makeup of the original cloud the system formed from) that defines the number of planets a system has - so it's going to have to be a random number for now
   * For now, this is between 1 and 10, because none is boring, and 10 is the limit of what we know of so far...
+* **Calculate Year Length** 
+  * Currently using a simplified version of Keplers First Law! - apparently only works for the sun, will need to look at this further.
+  * The square of the period equals the cube of the distance multiplied by a constant that depends on the mass of the central body.  
  
 ## Roadmap (mid-term to-do list)
 

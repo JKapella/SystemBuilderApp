@@ -40,18 +40,24 @@ function calculateNoOfPlanets() {
 	return Math.floor(Math.random() * (noOfPlanetsMax - noOfPlanetsMin + 1)) + noOfPlanetsMin
 }
 
-function calculateOrbitalDistance(planetNumber) {
+function calculateOrbitalDistance(planetNumber, starMass, planets) {
 	//TODO - make this much better, the distribution is currently too weighted away from the star, should be the opposite
 	var solOrbitalRange = 60;
-	var potentialOrbitalRange = solOrbitalRange * createdSystem.createdStar.mass;
+	var potentialOrbitalRange = solOrbitalRange * starMass;
 	var randomNumber = Math.random();
 	var orbitalRangeMin
 	if (planetNumber > 0) {
-		orbitalRangeMin = createdSystem.planets[planetNumber - 1].orbitalDistance;
+		orbitalRangeMin = planets[planetNumber - 1].orbitalDistance;
 	} else {
 		orbitalRangeMin = 0.2;
 	}
 	return (randomNumber * randomNumber) * (potentialOrbitalRange - orbitalRangeMin) + orbitalRangeMin;
+}
+
+
+function calculateYearLength(planetNumber, planets) {
+	var yearLength = Math.sqrt(Math.pow(planets[planetNumber].orbitalDistance ,3))
+	return yearLength * 365
 }
 
 // Execute the whole thing on click!
@@ -63,16 +69,6 @@ document.getElementById("generate").onclick = function generateSystem() {
 var elements = document.getElementsByClassName("generatedTable");
 while(elements.length > 0){
 	elements[0].parentNode.removeChild(elements[0]);
-}
-
-//Planet creation functions --------------------------------------------------------------------------------------------------
-
-
-function calculateYearLength(planetNumber) {
-	//using a simplified version of Keplers First Law! - apparently only works for the sun
-	//The square of the period equals the cube of the distance multiplied by a constant that depends on the mass of the central body?
-	var yearLength = Math.sqrt(Math.pow(createdSystem.planets[planetNumber].orbitalDistance ,3));
-	return yearLength * 365;
 }
 
 //DOM Manipulation script --------------------------------------------------------------------------
@@ -152,12 +148,11 @@ createdSystem.noOfPlanets = calculateNoOfPlanets();
  
 //create the planets
 
-for (currentPlanet = 0; currentPlanet < createdSystem.noOfPlanets; currentPlanet++) {
-	// var currentName = 'Planet: ' + currentPlanet; //improve this to at least stellar classification
+for (var currentPlanet = 0; currentPlanet < createdSystem.noOfPlanets; currentPlanet++) {
 	createdSystem.planets.push({}); //create empty planet object
 	createdSystem.planets[currentPlanet].name = 'Planet: ' + (currentPlanet + 1); //give it a name
-	createdSystem.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet); //return in AU
-	createdSystem.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet); //return in earth days
+	createdSystem.planets[currentPlanet].orbitalDistance = calculateOrbitalDistance(currentPlanet, createdSystem.createdStar.mass, createdSystem.planets); //return in AU
+	createdSystem.planets[currentPlanet].yearLength = calculateYearLength(currentPlanet, createdSystem.planets); //return in earth days
 }
 
 //loop through the different bits of info and add to the HTML...
