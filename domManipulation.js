@@ -1,6 +1,41 @@
-//DOM Manipulation script --------------------------------------------------------------------------
+function outputHTMLTables(createdSystem) {
+    var elements = document.getElementsByClassName("generatedTable")
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0])
+    }
+
+    addStarDetailstoHTMLTable(createdSystem.createdStar)
+    addPlanetDetailsToHTMLTable(createdSystem)
+}
+
+
+// <h4 id='starName'>Star</h4>
+//     <table id="mainTable">
+//     <tr>
+//     <th>Star Name</th>
+// <th>Mass (M⊕)</th>
+// <th>Age (bya)</th>
+// <th>Size (R⊕)</th>
+// <th>Type (Stellar Class)</th>
+// </tr>
+// <tr id="starDetails"></tr>
+//     </table>
+//     <h4>Planets</h4>
+//     <table id="planetDetails">
+//     <tr>
+//     <th>Name</th>
+//     <th>Orbital Distance (AU)</th>
+// <th>Year Length (Earth Days)</th>
+// </tr>
+// </table>
+
+
 
 function addStarDetailsHTML(info) {
+
+
+
+
     //create the cell
     var starInfoCell = document.createElement("td");
     starInfoCell.setAttribute("class", "generatedTable");
