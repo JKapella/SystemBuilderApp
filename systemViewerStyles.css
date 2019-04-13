@@ -3,6 +3,7 @@
     height: 500px;
     overflow: hidden;
     background-color: #000000;
+    font-size: 11px;
 }
 
 #universe {
@@ -21,7 +22,7 @@
     transform: rotateX(75deg);
 }
 
-#sun, .planet {
+#star, .planet {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -33,9 +34,9 @@
     transform-style: preserve-3d;
 }
 
-#sun {
+#star {
     background-color: #e6b800;
-    box-shadow: 0 0 60px 10px rgba(255, 160, 60, 0.9);
+    box-shadow: 0 0 30px 1px rgba(255, 160, 60, 0.9);
     z-index: 1;
     transform: rotateX(-75deg);
 }
@@ -46,6 +47,7 @@
     animation-name: invert;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    left: 50%;
 }
 
 .planet {
@@ -64,45 +66,15 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-style: preserve-3d;
-}
-
-#mercury.orbit {
     width: 12em;
     height: 12em;
     margin-top: -6em;
     margin-left: -6em;
 }
 
-#mercury.orbit, #mercury .pos {
-    animation-duration: 3s;
-}
 
-#mercury .pos {
-    left: 50%;
-}
-
-#mercury .planet {
-    left: 50%;
-    top: 50%;
-    animation-name: shadow-mercury;
-    animation-duration: 3s;
-}
-
-#mercury .planet {
-    animation-name: shadow-mercury;
-    animation-duration: 3s;
-}
-
-/* Planet sizes */
-#sun {
-    font-size: 6em;
-}
-#mercury {
-    font-size: 2em;
-}
 
 @keyframes orbit {
-    0%   { transform: rotateZ(0deg); }
     100% { transform: rotateZ(-360deg); }
 }
 
@@ -111,14 +83,34 @@
     100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
 }
 
-@keyframes shadow-mercury {
-    0% {box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);}
-    25% {box-shadow: inset 16px 0 8px rgba(0, 0, 0, 0.5); }
-    50% {box-shadow: inset 40px -20px 16px rgba(0, 0, 0, 0.5);}
-    50.01% {box-shadow: inset -40px -20px 16px rgba(0, 0, 0, 0.5);}
-    75% {box-shadow: inset -16px 0 8px rgba(0, 0, 0, 0.5);}
-    100% {box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);}
+
+
+#mercury.orbit, #mercury .pos {
+    animation-duration: 3s;
+}
+
+#venus.orbit, #venus .pos {
+    animation-duration: 6s;
 }
 
 
+/* Planet sizes */
+#star {
+    font-size: 10em;
+}
+#mercury {
+    font-size: 2.5em;
+}
 
+#venus {
+    font-size: 7rem;
+}
+
+
+#mercury > .pos > .planet {
+    font-size: 0.4em;
+}
+
+#venus > .pos > .planet {
+    font-size: 0.2em;
+}

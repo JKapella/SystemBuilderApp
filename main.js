@@ -9,6 +9,7 @@ document.getElementById("generate").addEventListener('click', function () {
     createdSystem.noOfPlanets = calculateNoOfPlanets()
     createPlanets(createdSystem)
     outputHTMLTables(createdSystem)
+    displaySystem(createdSystem)
 })
 
 
