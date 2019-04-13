@@ -23,11 +23,11 @@ function calculateStarSize(starAge, starMass) {
 	//TODO, in general sort this function out, not good or clear
 	var ageAdjustment
 	if (starAge < 4.58) { //if star is younger than the sun
-		ageAdjustment = -((starAge.age/4.58) * 0.11) //0.11 is the change in size for sun in first 5bya of life
+		ageAdjustment = -((starAge/4.58) * 0.11) //0.11 is the change in size for sun in first 5bya of life
 	} else { //it's older than the sun
-		ageAdjustment = (((starAge.age - 4.58)/5.42) * 0.37) //0.37 is the change in size for sun in second 5bya of life
+		ageAdjustment = (((starAge - 4.58)/5.42) * 0.37) //0.37 is the change in size for sun in second 5bya of life
 	}
-	return starMass + ageAdjustment
+	return (starMass + ageAdjustment).toFixed(2)
 }
 
 function calculateStarType() {

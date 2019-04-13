@@ -1,7 +1,7 @@
 document.getElementById("generate").addEventListener('click', function () {
     var createdSystem = {createdStar: {}, planets: []}
     createdSystem.name = createSystemName()
-    createdSystem.createdStar.name = createdSystem.name + '-a'
+    createdSystem.createdStar.name = createdSystem.name + '-1'
     createdSystem.createdStar.mass = calculateStarMass()
     createdSystem.createdStar.age = calculateStarAge()
     createdSystem.createdStar.size = calculateStarSize(createdSystem.createdStar.age, createdSystem.createdStar.mass)
