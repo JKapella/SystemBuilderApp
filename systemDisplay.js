@@ -8,7 +8,7 @@ function displaySystem(system) {
     document.getElementById('systemViewer').innerHTML = html
     addStarStyling(system.createdStar.size)
     setOrbitSizes(system)
-    //set the orbit speed, set the planet size, set the planet correct animation speed
+    // setPlanetSize(system)
     setAnimationSpeeds(system)
 }
 
@@ -25,19 +25,23 @@ function addPlanetsHTML(system) {
 }
 
 function addStarStyling(size) {
-    var newSize = 8 * size //10rem is the 'basic' star size (might want to reduce this?) maybe 8?
-    document.getElementById('star').style.fontSize = newSize + 'em'
+    var newSize = 6 * size
+    document.getElementById('star').style.width = newSize + 'rem'
+    document.getElementById('star').style.height = newSize + 'rem'
+    document.getElementById('star').style.marginTop = -(newSize/2) + 'rem'
+    document.getElementById('star').style.marginLeft = -(newSize/2) + 'rem'
+
 }
 
 function setOrbitSizes(system) {
-    //current min and max for this is 1rem and 7rem - they create the smallest and widest orbits
-    var avaliableOrbitRange = 8
-    var orbitalMarginSize = avaliableOrbitRange / system.noOfPlanets
-    var currentOrbit = 1 + (orbitalMarginSize / 2)
+    var minOrbitalDistance = 10
     system.planets.forEach(function(planet) {
+        var currentOrbit = (planet.orbitalDistance * 2) + minOrbitalDistance
         var targetPlanetOrbit = document.getElementById(planet.name)
-        targetPlanetOrbit.style.fontSize = currentOrbit + 'em'
-        currentOrbit += orbitalMarginSize
+        targetPlanetOrbit.style.width = currentOrbit + 'rem'
+        targetPlanetOrbit.style.height = currentOrbit + 'rem'
+        targetPlanetOrbit.style.marginTop = -(currentOrbit/2) + 'rem'
+        targetPlanetOrbit.style.marginLeft = -(currentOrbit/2) + 'rem'
     })
 }
 
@@ -46,32 +50,9 @@ function setAnimationSpeeds(system) {
         var targetPlanetOrbit = document.getElementById(planet.name)
         var speed = planet.yearLength / 365 //'base' speed is currently 1 sec
         targetPlanetOrbit.style.animationDuration = speed + 's'
-
         var targetPosSelector = '#' + planet.name + ' > .pos'
         var targetPos = document.querySelector(targetPosSelector)
         targetPos.style.animationDuration = speed + 's'
 
     })
 }
-
-// #mercury.orbit, #mercury .pos {
-//     animation-duration: 3s;
-// }
-
-//PERHAPS DO SET SIZES TO START?
-
-//BETWEEN 1rem and 7rem for the best distribution
-//depending on the number of planets - carve up the 6 avalaible units and add the stuff to them
-
-
-// html = `
-// <div id="mercury" class="orbit">
-// <div class='pos'>
-// <div class="planet"></div>
-// </div>
-// </div>
-// <div id="venus" class="orbit">
-// <div class='pos'>
-// <div class="planet"></div>
-// </div>
-// </div>`
