@@ -8,7 +8,7 @@ function displaySystem(system) {
     document.getElementById('systemViewer').innerHTML = html
     addStarStyling(system.createdStar.size)
     setOrbitSizes(system)
-    // setPlanetSize(system)
+    setPlanetSize(system)
     setAnimationSpeeds(system)
 }
 
@@ -43,6 +43,21 @@ function setOrbitSizes(system) {
         targetPlanetOrbit.style.marginTop = -(currentOrbit/2) + 'rem'
         targetPlanetOrbit.style.marginLeft = -(currentOrbit/2) + 'rem'
     })
+}
+
+function setPlanetSize(system) {
+    var minSize = 0.3
+    var maxSize = 1.3
+    system.planets.forEach(function(planet) {
+        var planetSize = Math.random() * (maxSize - minSize) + minSize
+        var selector = '#' + planet.name + '> .pos > .planet'
+        var targetPlanet = document.querySelector(selector)
+        targetPlanet.style.width = planetSize + 'rem'
+        targetPlanet.style.height = planetSize + 'rem'
+        targetPlanet.style.marginTop = -(planetSize/2) + 'rem'
+        targetPlanet.style.marginLeft = -(planetSize/2) + 'rem'
+    })
+
 }
 
 function setAnimationSpeeds(system) {
