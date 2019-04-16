@@ -67,10 +67,14 @@ function setPlanetColours(system) {
          '#9E393C',
          '#7502F4',
          '#4F4CB0',
-         '#FDA600'
+         '#35ff9a',
+         '#878787',
+         '#d64219',
+         '#d8ae6a',
+         '#1cffef'
      ]
     system.planets.forEach(function(planet) {
-        var random = Math.floor(Math.random() * (5 - 0) + 0)
+        var random = Math.floor(Math.random() * 6)
         var planetColour = colours[random]
         var selector = '#' + planet.name + '> .pos > .planet'
         var targetPlanet = document.querySelector(selector)
