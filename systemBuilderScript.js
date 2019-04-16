@@ -1,10 +1,7 @@
 function createSystemName() {
-	var nameInputFieldContent = document.querySelector('input').value
-	var name = 'Anonymous'
-	if (nameInputFieldContent !== '') {
-		name = nameInputFieldContent
-	}
-	return name
+	var maxNumber = sciNames.length
+	var randomNumber = Math.floor(Math.random() * maxNumber)
+	return sciNames[randomNumber]
 }
 
 function calculateStarMass () {
