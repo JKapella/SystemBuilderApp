@@ -8,7 +8,7 @@ function outputHTMLTables(createdSystem) {
 }
 
 function createSystemNameHTML(starName) {
-    var html = `<h4>The ${starName} system</h4>`
+    var html = `<h1>The ${starName} system</h1>`
     return html
 }
 

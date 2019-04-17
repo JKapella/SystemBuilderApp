@@ -60,7 +60,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     animation-name: orbit;
     animation-iteration-count: infinite;
@@ -92,25 +92,3 @@
 #venus.orbit, #venus .pos {
     animation-duration: 6s;
 }
-
-
-/* Planet sizes */
-/*#star {*/
-/*    font-size: 10rem;*/
-/*}*/
-/*#mercury {*/
-/*    font-size: 1rem;*/
-/*}*/
-
-/*#venus {*/
-/*    font-size: 7rem;*/
-/*}*/
-
-
-/*#mercury > .pos > .planet {*/
-/*    font-size: 1rem;*/
-/*}*/
-
-/*#venus > .pos > .planet {*/
-/*    font-size: 0.2rem;*/
-/*}*/
