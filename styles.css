@@ -12,13 +12,29 @@ body {
 }
 
 h2 {
+    font-size: 3rem;
+}
 
+p {
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+th {
+    border: 2px solid #257DAC;
+    background-color: #257DAC;
+    color: #0C1423;
 }
 
 .button {
     font-size: 2rem;
     border-radius: 5px;
-    margin: 15px auto;
+    margin: 40px auto;
     padding: 10px;
     border: 2px solid #257DAC;
     box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
