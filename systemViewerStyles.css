@@ -36,6 +36,8 @@
 
 #star {
     background-color: #e6b800;
+    background-image: radial-gradient(#e68a00, #e6b800);
+    background-position: -100px -100px;
     box-shadow: 0 0 30px 1px rgba(255, 160, 60, 0.9);
     z-index: 1;
     transform: rotateX(-75deg);
@@ -72,8 +74,6 @@
     margin-left: -6rem;
 }
 
-
-
 @keyframes orbit {
     100% { transform: rotateZ(-360deg); }
 }
@@ -81,14 +81,4 @@
 @keyframes invert {
     0%   { transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
     100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
-}
-
-
-
-#mercury.orbit, #mercury .pos {
-    animation-duration: 3s;
-}
-
-#venus.orbit, #venus .pos {
-    animation-duration: 6s;
 }
