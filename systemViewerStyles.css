@@ -1,8 +1,10 @@
 #systemViewer {
     position: relative;
-    height: 500px;
+    height: 600px;
     overflow: hidden;
     background-color: #000000;
+    background-image: url("img/stars.png");
+    background-size: auto;
     font-size: 11px;
 }
 

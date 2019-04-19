@@ -12,7 +12,8 @@ body {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    text-shadow: 0 0 15px #0A51AC;
 }
 
 p {
@@ -29,6 +30,7 @@ th {
     border: 2px solid #257DAC;
     background-color: #257DAC;
     color: #0C1423;
+    box-shadow: 0 0 8px 0 #0A51AC;
 }
 
 .button {
@@ -37,6 +39,7 @@ th {
     margin: 40px auto;
     padding: 10px;
     border: 2px solid #257DAC;
+    text-shadow: 0 0 15px #0A51AC;
     box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
     animation: pulse 2s infinite;
     transition: 1s;

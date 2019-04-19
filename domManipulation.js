@@ -1,14 +1,13 @@
 function outputHTMLTables(createdSystem) {
     document.getElementById('systemDetails').innerHTML = ''
     var systemDetailsHTML = ''
-    systemDetailsHTML += createSystemNameHTML(createdSystem.name)
     systemDetailsHTML += addStarDetailsHTML(createdSystem.createdStar)
     systemDetailsHTML += addPlanetDetailsHTML(createdSystem)
     document.getElementById('systemDetails').innerHTML = systemDetailsHTML
 }
 
 function createSystemNameHTML(starName) {
-    var html = `<h2>The ${starName} system</h2>`
+    var html = `<h2 class='system-name-label'>The ${starName} system</h2>`
     return html
 }
 
@@ -45,7 +44,7 @@ function addPlanetDetails(planetName,PlanetOrbit,PlanetYear) {
 
 function addPlanetDetailsHTML(system) {
     var html =
-    `<h4>Planets</h4>
+    `<h2>Planets</h2>
         <table>
         <tr>
             <th>Name</th>

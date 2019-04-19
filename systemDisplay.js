@@ -1,10 +1,9 @@
-
-
 function displaySystem(system) {
     document.getElementById('systemViewer').innerHTML = ''
     var html = `<div id='universe'><div id='galaxy'><div id='star'></div>`
     html += addPlanetsHTML(system)
     html += `</div></div>`
+    html += createSystemNameHTML(system.name)
     document.getElementById('systemViewer').innerHTML = html
     addStarStyling(system.createdStar.size)
     setOrbitSizes(system)
