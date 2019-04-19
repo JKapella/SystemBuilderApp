@@ -47,7 +47,7 @@ th {
 }
 
 .github-button {
-    font-size: 1.4rem;
+    font-size: 1rem;
     border-radius: 5px;
     margin: 35px auto;
     padding: 10px;
@@ -55,14 +55,14 @@ th {
     text-shadow: 0 0 15px #0A51AC;
     box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
     transition: 1s;
-    width: 200px;
+    width: 160px;
     display: block;
     text-decoration: none;
     color: inherit;
 }
 
 .git-text {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .button:hover, .github-button:hover {
