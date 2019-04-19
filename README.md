@@ -1,5 +1,5 @@
 # SystemBuilderApp
-A simple js based app to procedurally generate a star system
+A simple js based app to procedurally generate a star system and create an animated visualisation using CSS.
 
 ## Notes
 
@@ -40,7 +40,6 @@ AGB:tip | 12.30 | 149.
  
 ## Roadmap (mid-term to-do list)
 
-* Add function for proc-gen a star name - using proper stellar classification
 * Make Calculate Star Type - dynamic as I introduce other star types
 * Make Calculate Number Of Planets related to original size of pre-stellar gas cloud
 
@@ -49,4 +48,4 @@ AGB:tip | 12.30 | 149.
 https://en.wikipedia.org/wiki/Stellar_classification
 https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
 EXOPLANET ARCHIVE - As cool as it sounds... https://exoplanetarchive.ipac.caltech.edu/
-Good links to papers on planetary distribtion in this article https://en.wikipedia.org/wiki/Planetary_system
+Good links to papers on planetary distribution in this article https://en.wikipedia.org/wiki/Planetary_system
