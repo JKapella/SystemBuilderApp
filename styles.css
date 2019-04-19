@@ -46,19 +46,14 @@ th {
     width: 300px;
 }
 
-.github-button {
-    font-size: 1rem;
-    border-radius: 5px;
+.button.github-button {
+    font-size: 1.2rem;
     margin: 35px auto;
-    padding: 10px;
-    border: 2px solid #257DAC;
-    text-shadow: 0 0 15px #0A51AC;
-    box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
-    transition: 1s;
     width: 160px;
     display: block;
     text-decoration: none;
     color: inherit;
+    animation: none;
 }
 
 .git-text {
@@ -138,7 +133,6 @@ th {
 }
 
 [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: none;
     font-style: normal;
@@ -146,8 +140,6 @@ th {
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-
-    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
