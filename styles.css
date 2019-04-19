@@ -46,7 +46,26 @@ th {
     width: 300px;
 }
 
-.button:hover {
+.github-button {
+    font-size: 1.4rem;
+    border-radius: 5px;
+    margin: 35px auto;
+    padding: 10px;
+    border: 2px solid #257DAC;
+    text-shadow: 0 0 15px #0A51AC;
+    box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
+    transition: 1s;
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.git-text {
+    font-size: 2rem;
+}
+
+.button:hover, .github-button:hover {
     animation: none;
     background-color: #257DAC;
     color: #0C1423;
@@ -105,4 +124,34 @@ th {
         -moz-box-shadow: 0 0 0 0 rgba(37,125,172, 0);
         box-shadow: 0 0 0 0 rgba(37,125,172, 0);
     }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?cz5r5k');
+    src:  url('fonts/icomoon.eot?cz5r5k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?cz5r5k') format('truetype'),
+    url('fonts/icomoon.woff?cz5r5k') format('woff'),
+    url('fonts/icomoon.svg?cz5r5k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+    content: "\eab0";
 }
