@@ -1,5 +1,7 @@
 # SystemBuilderApp
-A simple js based app to procedurally generate a star system and create an animated visualisation using CSS.
+A simple javascript app to procedurally generate a star system and create an animated visualisation using CSS.
+
+The generation is based on some really rough real science, and the visualisation is inspired by [Julian Garnier's excellent 3d solar system.](https://github.com/juliangarnier/3D-CSS-Solar-System)
 
 ## Notes
 
