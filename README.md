@@ -5,7 +5,7 @@ The generation is based on some really rough real science, and the visualisation
 
 ## Notes
 
-###Key of units of measurement
+### Key of units of measurement
 
 * Created Star Mass - In solar masses
 * Created Star Age - In Billions of Years
@@ -14,7 +14,7 @@ The generation is based on some really rough real science, and the visualisation
 * Planet Orbital Distance - In AU
 * Planet Year Length - In Earth Days
 
-###Details of functions
+### Details of functions
 
 * **Calculate Star Mass** 
   * This is currently random - but within limits for a g-type main sequence star. Ideally this will take into account some sort of starting condition - e.g. the material available in the cloud of material the star is formed from.
@@ -45,7 +45,7 @@ AGB:tip | 12.30 | 149.
 * Make Calculate Star Type - dynamic as I introduce other star types
 * Make Calculate Number Of Planets related to original size of pre-stellar gas cloud
 
-##Notes
+## Notes
 
 https://en.wikipedia.org/wiki/Stellar_classification
 https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
