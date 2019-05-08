@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>System Builder V 1.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link rel='stylesheet' href='styles.css'>
+	<link rel='stylesheet' href='systemViewerStyles.css'>
+	<script type="text/javascript" src="main.js" defer></script>
+	<script type="text/javascript" src="systemBuilderScript.js" defer></script>
+	<script type="text/javascript" src="domManipulation.js" defer></script>
+	<script type="text/javascript" src="systemDisplay.js" defer></script>
+	<script type="text/javascript" src="scientistList.js" defer></script>
+</head>
+<body>
+	<div id='systemViewer' class='container'>
+		<h1>- - System Builder - -</h1>
+		<p>- - Click the 'Generate' button below to start - -</p>
+	</div>
+	<div class='floatContainer'>
+		<div class='sideBar float'>
+			<div id='systemDetails' class='container textContainer'>
+				<h2>NO DATA</h2>
+				<p>Generate a new system to retrieve data</p>
+			</div>
+		</div>
+		<div class='sideBar float'>
+			<div class='container textContainer'>
+				<div id="generate" class="button">Generate a new system</div>
+				<h2>System Builder V 1.0</h2>
+				<p>A work in progress procedural star system generator. Hit the button above to create a system.</p>
+				<p>Currently the generator will create G-type main-sequence stars, and a planetary system of between 1 and 10 planets using Javascript. Visualisation created with HTML and CSS. Find more design notes (and the code) on my Github.</p>
+				<a href='https://github.com/JKapella/SystemBuilderApp' target='_blank' class='github-button button'>
+					<span aria-hidden="true" data-icon="&#eab0;" class="icon-github"></span>  <span class='git-text'>Github</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

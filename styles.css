@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color:  #0C1423;
+    color: #257DAC;
+    font-family: 'VT323', monospace;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-shadow: 0 0 15px #0A51AC;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+th {
+    border: 2px solid #257DAC;
+    background-color: #257DAC;
+    color: #0C1423;
+    box-shadow: 0 0 8px 0 #0A51AC;
+}
+
+.button {
+    font-size: 2rem;
+    border-radius: 5px;
+    margin: 40px auto;
+    padding: 10px;
+    border: 2px solid #257DAC;
+    text-shadow: 0 0 15px #0A51AC;
+    box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
+    animation: pulse 2s infinite;
+    transition: 1s;
+    width: 300px;
+}
+
+.button.github-button {
+    font-size: 1.2rem;
+    margin: 35px auto;
+    width: 160px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    animation: none;
+}
+
+.git-text {
+    font-size: 1.6rem;
+}
+
+.button:hover, .github-button:hover {
+    animation: none;
+    background-color: #257DAC;
+    color: #0C1423;
+    cursor: pointer;
+}
+
+.sideBar {
+    width: 50%;
+}
+
+.container {
+    border: 2px solid #257DAC;
+    box-shadow: 0 0 8px 0 #0A51AC, inset 0 0 8px 0 #0A51AC;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.textContainer {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.floatContainer {
+    overflow: auto;
+}
+
+.float {
+    float: left;
+}
+
+#systemViewer {
+    margin-top: 10px;
+}
+
+#systemViewer > h1 {
+    font-size: 8rem;
+    padding-top: 80px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #0A51AC;
+}
+
+#systemViewer > p {
+    font-size: 2rem;
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(37,125,172, 0.8);
+        box-shadow: 0 0 0 0 rgba(37,125,172, 0.8);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 20px rgba(37,125,172, 0);
+        box-shadow: 0 0 0 20px rgba(37,125,172, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(37,125,172, 0);
+        box-shadow: 0 0 0 0 rgba(37,125,172, 0);
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?cz5r5k');
+    src:  url('fonts/icomoon.eot?cz5r5k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?cz5r5k') format('truetype'),
+    url('fonts/icomoon.woff?cz5r5k') format('woff'),
+    url('fonts/icomoon.svg?cz5r5k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+    content: "\eab0";
+}
